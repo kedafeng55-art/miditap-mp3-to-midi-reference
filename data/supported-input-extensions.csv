@@ -1,0 +1,16 @@
+media_class,extension,ui_status,scope_note
+audio,mp3,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,wav,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,m4a,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,aac,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,flac,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,aiff,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,aif,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,ogg,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,oga,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+audio,opus,accepted,Extension accepted by the referenced browser UI; codec decoding still depends on the browser
+video,webm,accepted,Only the video's audio track is used; codec decoding still depends on the browser
+video,mp4,accepted,Only the video's audio track is used; codec decoding still depends on the browser
+video,m4v,accepted,Only the video's audio track is used; codec decoding still depends on the browser
+video,mov,accepted,Only the video's audio track is used; codec decoding still depends on the browser
+
