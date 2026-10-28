@@ -1,0 +1,4 @@
+source_file,output_file,note_index,note_name,midi_number,start_seconds,duration_seconds,observed_on,method
+two-notes.mp3,two-notes.mid,1,A4,69,0.000,1.498,2026-10-29,@tonejs/midi parse of generated output
+two-notes.mp3,two-notes.mid,2,C5,72,1.462,1.499,2026-10-29,@tonejs/midi parse of generated output
+
