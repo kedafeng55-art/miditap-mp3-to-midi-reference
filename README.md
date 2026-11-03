@@ -1,26 +1,32 @@
-# MP3-to-MIDI Reference Data and Validator
+# Miditap Audio-to-MIDI Test Data
 
-Small, reproducible resources for inspecting an MP3-to-MIDI transcription workflow:
+This repository collects small, machine-readable observations from browser-based audio-to-MIDI tests. The data is intended for format comparisons, reproducibility checks, and realistic expectations about note-transcription output.
 
-- a CSV record of a controlled two-note conversion;
-- a machine-readable input-format list;
-- a practical MIDI cleanup checklist; and
-- a dependency-free Standard MIDI File structure validator.
+The full test narratives and browser converter are available on [Miditap's audio-to-MIDI test page](https://miditap.com/audio-to-midi/).
 
-The controlled result comes from a synthetic MP3 containing A4 followed by C5. The generated MIDI contained those two pitches in that order. This fixture is deliberately narrow: it does **not** establish an accuracy rate for songs, polyphonic mixes, drums, noisy recordings, or other converters.
+## Data files
 
-The browser converter and the full test-method narrative are available at [Miditap](https://miditap.com/guides/mp3-to-midi-converter.html).
+| Path | Contents | Use |
+| --- | --- | --- |
+| `data/audio-format-observations.csv` | OGG, M4A/AAC, FLAC, AIFF, and AIF results | Compare observed browser decoding and MIDI output across tested encodings |
+| `data/guitar-transcription-observations.csv` | Single-note and chord acoustic-guitar results | Compare intended material, detected event counts, output duration, matches, and cleanup notes |
+| `docs/browser-codec-notes.md` | Scope and interpretation notes | Avoid treating a tested extension as a universal codec-support claim |
+| `data/two-note-observation.csv` | Earlier controlled two-note MP3 observation | Inspect note names, starts, and durations from the original fixture |
+| `data/supported-input-extensions.csv` | Extensions accepted by the browser UI | Read the UI input list in machine-readable form |
+| `docs/midi-cleanup-checklist.md` | Ordered review checklist | Review a draft transcription before further editing |
+| `tools/validate_midi.py` | Dependency-free Standard MIDI File validator | Check the structure of a `.mid` file |
+| `fixtures/two-notes.mp3` | Synthetic source for the earlier observation | Reproduce the original input |
+| `fixtures/two-notes.mid` | MIDI output for the earlier observation | Exercise the validator and inspect the output |
 
-## Repository layout
+## What the new observations show
 
-| Path | Purpose |
-| --- | --- |
-| `data/two-note-observation.csv` | Observed note numbers, names, starts, and durations |
-| `data/supported-input-extensions.csv` | Extensions accepted by the referenced browser UI |
-| `docs/midi-cleanup-checklist.md` | Ordered review checklist for a draft transcription |
-| `tools/validate_midi.py` | Structural validator for `.mid` files |
-| `fixtures/two-notes.mp3` | Synthetic two-note source used for the observation |
-| `fixtures/two-notes.mid` | Generated MIDI output used for the observation |
+- The tested 4.003-second Ogg/Vorbis guitar file completed with one MIDI track and 33 detected events.
+- The M4A/AAC and FLAC versions of the 4.8-second controlled fixture both produced E4, G4, B4, and E5 at starts of 0.244s, 1.300s, 2.277s, and 3.426s; each MIDI was 118 bytes.
+- The same 4.000-second PCM AIFF guitar recording completed as both `.aiff` and `.aif`; each MIDI contained 29 detected events.
+- The 4.000-second separated-note guitar input produced 30 events over 3.936 seconds.
+- The 9.366-second four-chord guitar input produced 40 events over 8.922 seconds.
+
+These are observations from specific files in the stated browser environment. They are not accuracy rates and do not predict results for other recordings, codecs, browsers, instruments, rooms, microphones, or effects chains.
 
 ## Validate a MIDI file
 
@@ -38,11 +44,10 @@ valid SMF: format=1, tracks=2, division=480, bytes=83, end_markers=2
 
 The validator checks the `MThd` signature, six-byte header, declared track count, track chunk boundaries, positive time division, and one end-of-track marker in each track. It is a structural check, not a musical-accuracy score.
 
-## Reusing the data
+## Reuse
 
-The text, tables, and code in this repository are released under CC0-1.0. The fixture audio and MIDI are synthetic and included under the same dedication.
+The text, tables, code, and synthetic fixtures in this repository are released under CC0-1.0.
 
 ## Provenance
 
-The observation was recorded on 2026-10-29 from Miditap's checked-in synthetic fixture. Note inspection used `@tonejs/midi`; the binary structure was checked with the validator in this repository. Values in the CSV are observations from that specific run, not estimates.
-
+The format observations are transcribed from the dated Miditap browser tests published on October 30, 2026. The guitar observations are transcribed from the two real acoustic-guitar tests published on November 3, 2026. Values are reported observations from those specific runs, not estimates.
