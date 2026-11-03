@@ -1,0 +1,3 @@
+test,input,input_duration_seconds,midi_events,midi_output_duration_seconds,matched,cleanup
+Separated notes,Acoustic guitar playing E and A,4.000,30,3.936,E and A both appeared,"B, G-sharp, C-sharp, D, octave duplicates, and short fragments also appeared"
+Strummed chords,"Acoustic guitar playing C, G, Am, and Em",9.366,40,8.922,Each chord segment contained its required pitch classes in order,"Repeated short attacks appeared, plus one extra A1 at the tail after Em"

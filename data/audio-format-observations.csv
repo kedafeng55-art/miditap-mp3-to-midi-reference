@@ -1,0 +1,6 @@
+input,fixture,observed_browser_result,detected_notes,note_starts_seconds,midi_bytes,events
+OGG,4.003-second Ogg/Vorbis acoustic-guitar recording,Completed with one MIDI track and 33 detected events,,,,33
+M4A/AAC,4.8-second controlled plucked-string fixture,Completed with one track and four notes,"E4, G4, B4, E5","0.244, 1.300, 2.277, 3.426",118,4
+FLAC,4.8-second FLAC version of the same controlled fixture,Completed with one track and four notes,"E4, G4, B4, E5","0.244, 1.300, 2.277, 3.426",118,4
+AIFF,4.000-second PCM AIFF guitar recording,Completed; MIDI contained 29 detected events,,,,29
+AIF,The same 4.000-second PCM AIFF guitar recording,Completed; MIDI contained 29 detected events,,,,29
