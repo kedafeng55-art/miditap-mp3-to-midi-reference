@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Convert MP3 to MIDI locally in your browser. Preview detected notes, copy the note list, and download a standard MIDI file without uploading your audio.">
+  <title>MP3 to MIDI — Private Browser Converter | Miditap</title>
+  <link rel="canonical" href="https://miditap.com/mp3-to-midi/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23101826'/%3E%3Cpath d='M20 36h6V23h6v22h6V28h6v13h5' fill='none' stroke='%23cfff5d' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/mp3-to-midi/tool.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Miditap home"><span class="brand-mark" aria-hidden="true">M</span><span>Miditap</span></a>
+    <nav aria-label="Primary navigation"><a href="/mp3-to-midi/" aria-current="page">Converter</a><a href="/how-to-convert-mp3-to-midi/">Guide</a><a href="/privacy.html">Privacy</a></nav>
+    <span class="local-badge"><i aria-hidden="true"></i> Local only</span>
+  </header>
+
+  <main>
+    <section class="tool-stage" aria-labelledby="page-title">
+      <div class="tool-heading">
+        <div>
+          <p class="eyebrow">AUDIO IN · NOTE DATA OUT</p>
+          <h1 id="page-title">MP3 to MIDI</h1>
+        </div>
+        <p class="tool-promise">Your file stays in this browser.<br>No upload. No account.</p>
+      </div>
+
+      <div class="tool-frame">
+        <div data-converter data-preset="mp3-to-midi"></div>
+        <div class="local-route" aria-label="Local processing route">
+          <span><i>01</i> Your file</span><b aria-hidden="true">→</b><span><i>02</i> Browser memory</span><b aria-hidden="true">→</b><span><i>03</i> Note model</span><b aria-hidden="true">→</b><span><i>04</i> MIDI download</span>
+        </div>
+      </div>
+      <p class="tool-footnote">One file at a time · The first conversion loads the bundled note model · Clear solo parts produce cleaner drafts than dense mixes</p>
+    </section>
+
+    <article>
+      <section class="content-block intro-block">
+        <p class="section-index">01 / SCOPE</p>
+        <div class="content-grid">
+          <h2>One converter for the audio formats people actually bring</h2>
+          <div>
+            <p>This MP3 to MIDI converter also handles browser-decodable WAV, FLAC, OGG, M4A, AAC, MP4, and WebM files. Video files contribute their audio track only; the picture is ignored.</p>
+            <p>An extension is not a promise about the codec inside it. If this browser cannot decode a file, Miditap stops and tells you instead of sending the recording to a server.</p>
+          </div>
+        </div>
+        <div class="format-ledger" aria-label="Tested input formats">
+          <span>MP3</span><span>WAV</span><span>FLAC</span><span>OGG</span><span>M4A</span><span>AAC</span><span>MP4</span><span>WEBM</span>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <p class="section-index">02 / METHOD</p>
+        <div class="content-grid">
+          <h2>Audio into MIDI is transcription, not a format swap</h2>
+          <div>
+            <p>The browser decodes the recording into samples. A bundled note model estimates pitch, onset, duration, and velocity, then the page writes those events into one standard <code>.mid</code> track.</p>
+            <p>The MIDI does not contain the original voice, instrument tone, lyrics, effects, or mix. Treat it as an editable note draft and compare it with the source in a DAW or notation editor.</p>
+          </div>
+        </div>
+        <ol class="method-steps">
+          <li><span>Choose</span><strong>Drop one clear recording</strong><p>A solo voice or instrument is easier than a mastered song.</p></li>
+          <li><span>Convert</span><strong>Keep the work on-device</strong><p>Decoding and note inference run inside this tab.</p></li>
+          <li><span>Inspect</span><strong>See the detected notes</strong><p>The piano roll makes extra and missing events visible.</p></li>
+          <li><span>Take it</span><strong>Download or copy</strong><p>Save the MIDI or copy its note list in one action.</p></li>
+        </ol>
+      </section>
+
+      <section class="content-block faq-block">
+        <p class="section-index">03 / STRAIGHT ANSWERS</p>
+        <div class="content-grid">
+          <h2>What this MIDI converter can—and cannot—do</h2>
+          <div class="faq-list">
+            <details open><summary>Does Miditap upload my MP3?</summary><p>No. The file is read into browser memory, transcribed on this device, and turned into a MIDI download locally.</p></details>
+            <details><summary>Is “audio to MIDI” different from “audio into MIDI”?</summary><p>No. Both describe the same transcription intent: estimating editable MIDI notes from recorded audio.</p></details>
+            <details><summary>Can I use this as a WAV to MIDI converter?</summary><p>Yes. WAV uses the same local workflow as the tested formats listed above.</p></details>
+            <details><summary>Will a complete song become a clean arrangement?</summary><p>Usually not. Overlapping instruments, drums, reverb, and harmonics compete for the same detector. Isolate the melodic part first and expect to clean the MIDI.</p></details>
+            <details><summary>Why can a listed format still fail?</summary><p>Containers and codecs are separate. Two files with the same extension may carry different encoded audio, and the browser must be able to decode that specific stream.</p></details>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer><span>Miditap · Local audio transcription</span><nav aria-label="Footer navigation"><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></nav></footer>
+  <script src="/converter-component.js"></script>
+</body>
+</html>
+
