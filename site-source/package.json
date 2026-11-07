@@ -1,0 +1,17 @@
+{
+  "name": "mp3-to-midi-studio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "npx --yes http-server dist -p 4173 -c-1"
+  },
+  "dependencies": {
+    "@spotify/basic-pitch": "^1.0.1",
+    "@breezystack/lamejs": "^1.2.7",
+    "@tonejs/midi": "^2.0.28",
+    "esbuild": "^0.25.11"
+    ,"playwright-core": "^1.56.1"
+  }
+}
+
